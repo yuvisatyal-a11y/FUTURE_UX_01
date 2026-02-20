@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Quote | HomePro Services</title>
+  <meta name="description" content="Request a free, no-obligation quote. Same-day service available. We’ll call you back within 15 minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="trust-bar">
+    <div class="container">
+      <span class="trust-item">✓ Licensed & Bonded</span>
+      <span class="trust-item">✓ 4.9★ from 2,400+ reviews</span>
+      <span class="trust-item">✓ 24/7 Emergency Available</span>
+      <a href="tel:+18005551234" class="trust-phone">📞 (800) 555-1234</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">HomePro<span>Services</span></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Get a Quote</a>
+        <a href="tel:+18005551234" class="btn btn-outline">Call Now</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Get a Free Quote in Minutes</h1>
+      <p>Fill out the form below and we’ll call you within 15 minutes. Same-day service available. No obligation, no pressure.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <form class="contact-form" action="#" method="post" id="lead-form">
+        <h3>Tell us what you need</h3>
+
+        <div class="form-group">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" name="name" required placeholder="John Smith">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service needed *</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="hvac">HVAC</option>
+            <option value="electrical">Electrical</option>
+            <option value="emergency">Emergency (Urgent)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Describe your issue (optional)</label>
+          <textarea id="message" name="message" placeholder="e.g., Kitchen sink is leaking under the cabinet, need someone as soon as possible."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit Quote Request</button>
+
+        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--color-text-muted);">
+          By submitting, you agree to be contacted by HomePro Services. We respect your privacy and never share your info.
+        </p>
+      </form>
+
+      <div class="contact-info">
+        <h3>Prefer to talk?</h3>
+
+        <div class="contact-info-item">
+          <div>
+            <strong>Call us</strong>
+            <p><a href="tel:+18005551234">(800) 555-1234</a></p>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">24/7 for emergencies</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div>
+            <strong>Email us</strong>
+            <p><a href="mailto:hello@homeproservices.com">hello@homeproservices.com</a></p>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">We respond within 2 hours</p>
+          </div>
+        </div>
+
+        <div class="trust-badges" style="justify-content: flex-start; margin-top: 24px;">
+          <div class="badge">100% Satisfaction Guarantee</div>
+          <div class="badge">No Hidden Fees</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">HomePro<span>Services</span></a>
+          <p>Your local partner for plumbing, HVAC & electrical since 2009.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Get a Quote</a>
+          <a href="tel:+18005551234">Call Us</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="tel:+18005551234">(800) 555-1234</a></p>
+          <p><a href="mailto:hello@homeproservices.com">hello@homeproservices.com</a></p>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 HomePro Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Pre-fill service if coming from services page
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      const select = document.getElementById('service');
+      if (select) {
+        const option = select.querySelector(`option[value="${serviceParam}"]`);
+        if (option) option.selected = true;
+      }
+    }
+
+    // Form submission (demo - no backend)
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thanks! We\'ll call you within 15 minutes. (This is a demo—no data was sent.)');
+    });
+  </script>
+</body>
+</html>
